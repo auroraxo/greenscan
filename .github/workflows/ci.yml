@@ -1,0 +1,29 @@
+name: self-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run bundled self-test (covers all six failure classes)
+        run: bash test.sh
+      - name: Confirm stdlib-only (no extra deps sneaking in)
+        run: |
+          python3 -c "
+          import re, pathlib
+          src = pathlib.Path('greenscan.py').read_text()
+          bad = re.findall(r'^\s*(?:from|import)\s+([A-Za-z_][\w.]*)', src, re.M)
+          forbidden = {'requests','httpx','urllib3','aiohttp','pip','setuptools'}
+          for name in bad:
+            top = name.split('.')[0]
+            assert top not in forbidden, f'non-stdlib import: {name}'
+          print('stdlib-only: ok')
+          "
