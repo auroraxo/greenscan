@@ -6,13 +6,16 @@ paste and send when a session exists.
 
 Target threads:
 
-1. Reply to the lead pilot thread — https://community.n8n.io/t/310860
-2. Reply to the cost thread — https://community.n8n.io/t/316526
-3. Show HN submission — https://news.ycombinator.com/submit
+1. Reply to the cost thread — https://community.n8n.io/t/316526 (alive, verified 2026-11-23)
+2. Show HN submission — https://news.ycombinator.com/submit
+3. ~~Reply to the lead pilot thread — community.n8n.io/t/310860~~ — **the thread was
+   deleted (HTTP 404, verified 2026-11-23). The draft below it is void; do not send it
+   and do not cite the thread anywhere.** The clinic case in the cost thread covers
+   the same failure class.
 
 ---
 
-## 1. Reply to t/310860 (Hilario's pilot thread)
+## VOID — reply to t/310860 (thread deleted 404; kept only as history)
 
 Subject: Re: Looking for 3 n8n users with real workflow reliability issues
 

@@ -69,15 +69,16 @@ key only needs read access (`workflow:read`, `execution:read`).
 
 ## Why it exists
 
-I read this thread and the linked cost thread on community.n8n.io:
+I built this after reading the thread where n8n operators priced their own
+pain on community.n8n.io:
 
-- [Looking for 3 n8n users with real workflow reliability issues](https://community.n8n.io/t/310860)
 - [When a silent failure hit you, what did it actually cost?](https://community.n8n.io/t/316526)
 
-The cost numbers in there: **$2,500–$8,000 per incident, 48 h to 3 weeks to
-detect, 6–15 billable hours to find**. The failure the lead describes:
-
-> The execution list is a wall of green.
+The numbers reported there: **$2,500–$8,000 per incident, 48 h to 3 weeks to
+detect, 6–15 billable hours to find**. One case in that thread: a clinic's
+WhatsApp follow-up workflow was saved with its trigger disabled, so ~40
+reminders over ~20 days never sent — and nothing threw an error. The engine
+and the outcome had silently diverged.
 
 Three paid vendors already serve this market continuously: Watchflow,
 Midwatch, OutcomeGuard. They all do the right thing — they read execution
